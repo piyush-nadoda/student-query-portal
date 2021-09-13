@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.rg-h1{
+   text-align: center;
+   margin: 30px 0;
+}
+
+.rg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+    background-color: rgb(248, 248, 248);
+}
+
+.rg-register-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+}
+
+.rg-login-svg{
+    height: 400px;
+    width: 400px;
+    align-self: center;
+    justify-self: center;
+    margin-left: 10%;
+}
+
+
+.rg-name-input{
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+    flex-direction: row;
+}
+
+.rg-label{
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    margin: 10px 0;
+    line-height: 2rem;
+}
+
+.rg-input, .rg-input-fn, .rg-input-ln{
+    padding: 15px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.rg-input-fn{
+    border-radius: 5px 0px 0px 5px;
+}
+
+.rg-input-ln{
+    border-radius: 0px 5px 5px 0px;
+}
+
+.rg-input:focus-visible, .rg-input-fn:focus-visible, .rg-input-ln:focus-visible{
+    outline: none;
+}
+
+.rg-sign-up, .rg-login{
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.rg-sign-up{
+    background: linear-gradient(270deg, #7F7CFC 30%, #587CFC 50%);
+    box-shadow: 0px 10px 10px -1px #B0AFD9;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    transition: all .5s;
+}
+
+.rg-login{
+    border: none;
+    background: transparent;
+    color: #7F7CFC;
+    font-weight: 700;
+}
+
+.rg-login:hover{
+    box-shadow: 0px 0px ;
+    cursor: pointer;
+    font-size: 1.125rem;
+}
+
+.rg-sign-up:hover{
+    cursor: pointer;
+    box-shadow: 0px 10px 10px 5px #B0AFD9;
+}
+
+.rg-pass-match{
+    font-size: 0.8rem;
+    color: red;
+}
+
+@media screen and (max-width:1060px) {
+    .rg-login-svg{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .rg-name-input{
+        display: block;
+    }
+    .rg-label{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .rg-sign-up,.rg-login{
+        max-width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    .rg-input-fn, .rg-input-ln{
+        border-radius: 5px;
+    }
+}

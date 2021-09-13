@@ -11,6 +11,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 const RegisterPage = ({ history }) => {
   const [firstName, setFirstName] = useState("");
@@ -18,6 +19,15 @@ const RegisterPage = ({ history }) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+
+
+  const {user} = useSelector((state)=> ({...state}))
+
+  useEffect(()=>{
+    if(user && user.token){
+        history.push('/')
+    }
+  }, [user, history])
 
   useEffect(() => {
     setEmail(window.localStorage.getItem("emailForSignIn"));

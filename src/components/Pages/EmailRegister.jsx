@@ -3,13 +3,21 @@ import '../Style/emailRegister.css'
 import {app} from '../../firebase'
 import { getAuth, sendSignInLinkToEmail } from "firebase/auth"
 import {toast} from 'react-toastify'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import loginImg from '../Images/login.svg'
+import { useSelector } from 'react-redux'
 
-
-const EmailRegister = () => {
+const EmailRegister = ({history}) => {
 
     const [email, setEmail] = useState("");
+
+  const {user} = useSelector((state)=> ({...state}))
+
+  useEffect(()=>{
+    if(user && user.token){
+        history.push('/')
+    }
+  }, [user, history])
 
     const handleSubmit = async (e) => {
         e.preventDefault();

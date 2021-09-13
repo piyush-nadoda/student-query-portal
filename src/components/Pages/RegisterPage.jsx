@@ -36,8 +36,23 @@ const RegisterPage = ({ history }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email || !pass || !confirmPass) {
+    if (!email && !pass && !confirmPass) {
       toast.error("Email and password is required");
+      return;
+    }
+
+    if (!email) {
+      toast.error("Email is required");
+      return;
+    }
+
+    if (!pass) {
+      toast.error("password is required");
+      return;
+    }
+
+    if (!confirmPass) {
+      toast.error("password is required");
       return;
     }
 

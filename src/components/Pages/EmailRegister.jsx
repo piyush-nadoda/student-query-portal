@@ -4,7 +4,7 @@ import {app} from '../../firebase'
 import { getAuth, sendSignInLinkToEmail } from "firebase/auth"
 import {toast} from 'react-toastify'
 import { useState, useEffect } from 'react'
-import loginImg from '../Images/login.svg'
+import loginImg from '../Images/register.svg'
 import { useSelector } from 'react-redux'
 
 const EmailRegister = ({history}) => {

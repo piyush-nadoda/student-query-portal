@@ -1,0 +1,37 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 25px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  height: 50px;
+  width: auto;
+}
+
+.navbar-main-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-left: 50px;
+}
+
+.navbar-user-list {
+  justify-self: flex-end;
+  flex-grow: 1;
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+}
+
+.navbar-user-list li {
+  margin: 0 25px;
+}

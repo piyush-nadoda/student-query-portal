@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import loginImg from "../Images/login.svg";
+import loginImg from "../Images/avatar.svg";
 import "../Style/registerPage.css";
 // eslint-disable-next-line no-unused-vars
 import { app } from "../../firebase";
@@ -20,14 +20,13 @@ const RegisterPage = ({ history }) => {
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
 
+  const { user } = useSelector((state) => ({ ...state }));
 
-  const {user} = useSelector((state)=> ({...state}))
-
-  useEffect(()=>{
-    if(user && user.token){
-        history.push('/')
+  useEffect(() => {
+    if (user && user.token) {
+      history.push("/");
     }
-  }, [user, history])
+  }, [user, history]);
 
   useEffect(() => {
     setEmail(window.localStorage.getItem("emailForSignIn"));
@@ -58,6 +57,7 @@ const RegisterPage = ({ history }) => {
 
     if (pass !== confirmPass) {
       toast.error("Password doesn't match");
+      return;
     }
 
     if (pass.length < 6) {
@@ -78,18 +78,21 @@ const RegisterPage = ({ history }) => {
             let user = auth.currentUser;
             console.log(user);
             await updateProfile(user, {
-              displayName: `${firstName} ${lastName}`
-            }).then(() => {
-              console.log("Name set");
-            }).catch((error) => {
-              toast.error(error.message)
-            });
+              displayName: `${firstName} ${lastName}`,
+            })
+              .then(() => {
+                console.log("Name set");
+              })
+              .catch((error) => {
+                toast.error(error.message);
+              });
             await updatePassword(user, pass)
-            .then(() => {
-              //.
-            }).catch((error) => {
-              toast.error(error.message)
-            });
+              .then(() => {
+                //.
+              })
+              .catch((error) => {
+                toast.error(error.message);
+              });
 
             const idTokenResult = await user.getIdTokenResult();
 
@@ -101,7 +104,7 @@ const RegisterPage = ({ history }) => {
           toast.error(error.message);
         });
     }
-    history.push('/')
+    history.push("/");
   };
 
   return (
@@ -121,7 +124,7 @@ const RegisterPage = ({ history }) => {
                   required={true}
                   value={firstName}
                   onChange={(e) => {
-                    setFirstName(e.target.value)
+                    setFirstName(e.target.value);
                   }}
                 />
               </label>
@@ -135,7 +138,7 @@ const RegisterPage = ({ history }) => {
                   required={true}
                   value={lastName}
                   onChange={(e) => {
-                    setLastName(e.target.value)
+                    setLastName(e.target.value);
                   }}
                 />
               </label>

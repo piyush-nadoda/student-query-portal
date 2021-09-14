@@ -143,7 +143,7 @@ h1{
         margin-left: 10px;
         margin-right: 10px;
     }
-    .login-login, .login-sign-up{
+    .login-login, .login-sign-up, .login-login-with-google{
         max-width: 95%;
         margin-left: 2.5%;
         margin-right: 2.5%;

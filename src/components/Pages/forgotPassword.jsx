@@ -3,7 +3,7 @@ import "../Style/emailRegister.css";
 import { app } from "../../firebase";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import loginImg from "../Images/login.svg";
+import loginImg from "../Images/forgot-password.svg";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { toast } from "react-toastify";
 

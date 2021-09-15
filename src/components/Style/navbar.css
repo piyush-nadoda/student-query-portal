@@ -1,4 +1,4 @@
-.navbar {
+.navbar-main {
   position: sticky;
   top: 0;
   left: 0;
@@ -11,6 +11,10 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.navbar {
+  display: none;
+}
+
 .navbar-logo {
   height: 50px;
   width: auto;
@@ -20,8 +24,18 @@
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  width: 30%;
-  margin-left: 50px;
+  width: 560px;
+  max-width: 50%;
+  margin-bottom: 0;
+}
+
+.navbar-link{
+  color: #212529;
+  text-decoration: none;
+}
+
+.navbar-link:hover{
+  color: #212529;
 }
 
 .navbar-user-list {
@@ -29,9 +43,56 @@
   flex-grow: 1;
   list-style-type: none;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
+  margin-bottom: 0;
 }
 
 .navbar-user-list li {
   margin: 0 25px;
+}
+
+.navbar-main-list li {
+  margin: 0 2%;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 840px) {
+  .navbar-main {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    background-color: #fff !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+#toggle {
+  width: 28px;
+  height: 30px;
+  margin: 10px auto;
+}
+
+#toggle div {
+  width: 100%;
+  height: 5px;
+  background: #000;
+  margin: 4px auto;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+
+#toggle.on .one {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#toggle.on .two {
+  opacity: 0;
+}
+
+#toggle.on .three {
+  transform: rotate(-45deg) translate(7px, -8px);
 }

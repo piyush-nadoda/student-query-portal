@@ -1,6 +1,8 @@
 import { getAuth } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { LoggedOutUser } from "../../actions/actions";
+import AboutUs from "../Utils/AboutUs";
+import Footer from "../Utils/Footer";
 import Navbar from "../Utils/Navbar";
 
 const Home = ({ history }) => {
@@ -16,8 +18,9 @@ const Home = ({ history }) => {
   return (
     <>
       <Navbar />
-      <h1>Home page</h1>
-      {/* <button onClick={logout}>Logout</button> */}
+      <AboutUs/>
+      <Footer/>
+      <button onClick={logout}>Logout</button>
     </>
   );
 };

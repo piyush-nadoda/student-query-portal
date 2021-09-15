@@ -1,0 +1,37 @@
+#footer_section{
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-decoration{
+    height: 2px;
+    width: 80px;
+    background-color: #7F7CFC;
+}
+
+.footer-company-description{
+    width: 180px;
+    padding-top: 10px;
+}
+
+.footer-li-opacity{
+    opacity: 0.8;
+}
+
+.footer-ul{
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+}
+
+.footer-font-small{
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-li-footer{
+    padding: 5px 2px;
+}
+
+.fad, .fas{
+    padding: 0px 3px;
+}

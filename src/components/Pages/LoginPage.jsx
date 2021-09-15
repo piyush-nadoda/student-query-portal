@@ -16,6 +16,7 @@ const LoginPage = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loadingGoogle, setLoadingGoogle] = useState(false);
   const dispatch = useDispatch();
 
   const {user} = useSelector((state)=> ({...state}))
@@ -73,6 +74,7 @@ const LoginPage = ({ history }) => {
 
   const googleLogin = (e) => {
     e.preventDefault();
+    setLoadingGoogle(true)
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
     signInWithPopup(auth, provider)
@@ -95,6 +97,7 @@ const LoginPage = ({ history }) => {
         toast.error(error.message);
         // ...
         // console.log(error);
+        setLoadingGoogle(false);
       });
   };
 
@@ -146,7 +149,7 @@ const LoginPage = ({ history }) => {
               {loading ? <i class='fa fa-spinner fa-spin '></i> : "Login" }
             </button>
             <button className="login-login-with-google" onClick={googleLogin}>
-              Login with google
+            {loadingGoogle ? <i class='fa fa-spinner fa-spin '></i> : "Login with google" }
             </button>
             <Link to="/register">
               <button className="login-sign-up">Sign-up</button>

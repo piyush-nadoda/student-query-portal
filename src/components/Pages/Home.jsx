@@ -32,10 +32,10 @@ const Home = ({ history }) => {
             />
             <div className="home-container-mockup-text">
               <h1 className="home-mockup-heading">
-                Build The Community
+                CREATE SPACE FOR STUDENT TO FIND SOLUTIONS
               </h1>
               <p className="home-mockup-subheading">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam in nisi voluptatibus modi. Praesentium, provident.
+              
               </p>
               {/* <button className="home-mockup-btn">Get Started For Free</button> */}
             </div>

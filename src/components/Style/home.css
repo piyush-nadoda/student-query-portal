@@ -1,0 +1,85 @@
+.home-container-top {
+  background: #edfbfe url(../Images/bg-hero-desktop.svg);
+  overflow: hidden;
+}
+
+.home-container-mockup {
+  width: 100vw;
+  display: inline-block;
+  padding: 50px 100px;
+  box-sizing: border-box;
+}
+
+.home-container-mockup-text {
+  width: 30vw;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.home-mockup {
+  width: 700px;
+  height: auto;
+  float: right;
+}
+
+.home-mockup-heading {
+  font-size: 2.25rem;
+  line-height: 3.5rem;
+  margin-top: 80px;
+}
+
+.home-mockup-subheading {
+  padding: 30px 0;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  opacity: 0.8;
+}
+
+.home-container-grow-together,
+.home-container-flowing-conversations,
+.home-container-your-users {
+  margin: 50px 100px 10px 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 30px 30px 30px 100px;
+  height: 500px;
+}
+
+.home-gt-mockup,
+.home-yu-mockup {
+  width: 500px;
+  height: auto;
+  float: right;
+}
+
+.home-gt-heading,
+.home-fc-heading,
+.home-yu-heading {
+  margin-top: 130px;
+  margin-bottom: 30px;
+  width: 30vw;
+  display: inline-block;
+}
+
+.home-gt-text,
+.home-fc-text,
+.home-yu-text {
+  width: 500px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  opacity: 0.5;
+  display: inline-block;
+}
+
+.home-fc-mockup {
+  width: 500px;
+  height: auto;
+  float: left;
+  padding-right: 150px;
+  padding-top: 50px;
+}
+
+.home-yu-mockup {
+  padding-top: 40px;
+}

@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import { ToastContainer} from 'react-toastify'
 import { getAuth } from "firebase/auth"
 import { useDispatch } from "react-redux";
+import AboutUs from './components/Pages/AboutUs'
 
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css'
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/register" component={EmailRegister} />
           <Route exact path="/forgot/password" component={ForgotPassword} />
+          <Route exact path="/aboutus" component={AboutUs} />
         </Switch>
     </div>
     </Router>

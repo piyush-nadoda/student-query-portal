@@ -1,7 +1,11 @@
 import '../Style/aboutUs.css'
+import Footer from '../Utils/Footer';
+import Navbar from '../Utils/Navbar';
 
 const AboutUs = () => {
   return (
+    <>
+    <Navbar/>
     <div id="about_us_section" className="about-section">
       <div className="about-inner-container">
         <h1>About Us</h1>
@@ -20,6 +24,8 @@ const AboutUs = () => {
         </p>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

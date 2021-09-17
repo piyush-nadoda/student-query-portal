@@ -23,7 +23,7 @@ function Footer(props) {
             <li className="footer-li footer-li-opacity"><Link className="text-dark text-decoration-none" to="/">Your Account</Link></li>
             <li className="footer-li footer-li-opacity"><Link className="text-dark text-decoration-none" to="/">QnA Page</Link></li>
             <li className="footer-li footer-li-opacity"><Link className="text-dark text-decoration-none" to="/">FAQ</Link></li>
-            <li className="footer-li footer-li-opacity"><a className="text-dark text-decoration-none" href="#about_us_section">About us</a></li>
+            <li className="footer-li footer-li-opacity"><Link className="text-dark text-decoration-none" to="/aboutUs">About us</Link></li>
           </ul></div>
         <div className="col-md-4"><h3>Contact</h3>
           <div className="footer-decoration"/>

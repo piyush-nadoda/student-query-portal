@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../Images/logo.svg";
 import "../Style/navbar.css";
 
@@ -30,14 +31,14 @@ const Navbar = () => {
           </span>
         </div>
         <ul className="navbar-main-list">
-          <li className="navbar-home-btn">Home</li>
+          <li className="navbar-home-btn"><Link className="navbar-link" to="/">Home</Link></li>
           <li className="navbar-qna-btn">QnA</li>
-          <li className="navbar-about-us-btn">  <a className="navbar-link" href="#about_us_section"> About Us</a></li>
+          <li className="navbar-about-us-btn">  <Link className="navbar-link" to="/aboutus"> About Us</Link></li>
           <li className="navbar-contact-us-btn"> <a className="navbar-link" href="#footer_section">Contact Us</a></li>
         </ul>
         <ul className="navbar-user-list">
-          <li><a className="navbar-link" href="/register">Register</a></li>
-          <li><a className="navbar-link" href="/login">Login</a></li>
+          <li><Link className="navbar-link" to="/register">Register</Link></li>
+          <li><Link className="navbar-link" to="/login">Login</Link></li>
         </ul>
       </nav>
 
@@ -67,19 +68,19 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
               <a className="nav-link" href="/feed">
                 QnA
               </a>
-              <a className="nav-link" href="#about_us_section">
+              <Link className="nav-link" to="/aboutus">
                 About Us
-              </a>
+              </Link>
               <a className="nav-link" href="#footer_section">Contact Us</a>
               <hr />
-              <a className="nav-link" href="/register">Register</a>
-              <a className="nav-link" href="/login">Login</a>
+              <Link className="nav-link" to="/register">Register</Link>
+              <Link className="nav-link" to="/login">Login</Link>
             </div>
           </div>
         </div>

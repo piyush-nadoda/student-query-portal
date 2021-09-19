@@ -43,7 +43,7 @@ const Home = ({ history }) => {
           <img className="home-gt-mockup" src={gt} alt="" />
           <h1 className="home-gt-heading">Our Public Platform</h1>
           <p className="home-gt-text">
-            Where Students/Faculty go to gain, learn, share their knowledge.
+            Where Students/Faculty can gain, learn, share their knowledge.
           </p>
         </div>
         <div className="home-container-flowing-conversations">

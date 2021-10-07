@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+import { useDispatch, useSelector } from "react-redux";
+import { LoggedOutUser } from "../../actions/actions";
+import { Link, useHistory } from "react-router-dom";
 import logo from "../Images/logo.svg";
 import "../Style/navbar.css";
 
 const Navbar = () => {
+  const history = useHistory();
   let y = document.querySelectorAll(".box");
+  const dispatch = useDispatch();
   y.forEach((element) => {
     element.onclick = function (e) {
       var head = e.currentTarget;
@@ -13,6 +18,16 @@ const Navbar = () => {
       }, 280);
     };
   });
+
+  const { user } = useSelector((state) => ({ ...state }));
+
+  const logout = () => {
+    const auth = getAuth();
+    auth.signOut();
+    dispatch(LoggedOutUser());
+    history.push("/login");
+  };
+
   return (
     <>
       <nav className="navbar-main">
@@ -31,14 +46,37 @@ const Navbar = () => {
           </span>
         </div>
         <ul className="navbar-main-list">
-          <li className="navbar-home-btn"><Link className="navbar-link" to="/">Home</Link></li>
+          <li className="navbar-home-btn">
+            <Link className="navbar-link" to="/">
+              Home
+            </Link>
+          </li>
           <li className="navbar-qna-btn">QnA</li>
-          <li className="navbar-about-us-btn">  <Link className="navbar-link" to="/aboutus"> About Us</Link></li>
-          <li className="navbar-contact-us-btn"> <a className="navbar-link" href="#footer_section">Contact Us</a></li>
+          <li className="navbar-about-us-btn">
+            {" "}
+            <Link className="navbar-link" to="/aboutus">
+              {" "}
+              About Us
+            </Link>
+          </li>
+          <li className="navbar-contact-us-btn">
+            {" "}
+            <a className="navbar-link" href="#footer_section">
+              Contact Us
+            </a>
+          </li>
         </ul>
         <ul className="navbar-user-list">
-          <li><Link className="navbar-link" to="/register">Register</Link></li>
-          <li><Link className="navbar-link" to="/login">Login</Link></li>
+          <li>
+            <Link className="navbar-link" to="/register">
+              Register
+            </Link>
+          </li>
+          <li>
+            <Link className="navbar-link" onClick={logout} to="/login">
+              {user && user.token ? "logout" : "login"}
+            </Link>
+          </li>
         </ul>
       </nav>
 
@@ -47,7 +85,7 @@ const Navbar = () => {
           <img className="navbar-logo" src={logo} alt="" />
           <button
             className="navbar-toggler"
-            style={{border:"none"}}
+            style={{ border: "none" }}
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup"
@@ -77,10 +115,16 @@ const Navbar = () => {
               <Link className="nav-link" to="/aboutus">
                 About Us
               </Link>
-              <a className="nav-link" href="#footer_section">Contact Us</a>
+              <a className="nav-link" href="#footer_section">
+                Contact Us
+              </a>
               <hr />
-              <Link className="nav-link" to="/register">Register</Link>
-              <Link className="nav-link" to="/login">Login</Link>
+              <Link className="nav-link" to="/register">
+                Register
+              </Link>
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
             </div>
           </div>
         </div>

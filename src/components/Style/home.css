@@ -17,7 +17,7 @@
 }
 
 .home-mockup {
-  width: 700px;
+  width: 40vw;
   height: auto;
   float: right;
 }
@@ -43,7 +43,7 @@
   box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.2);
   box-sizing: border-box;
   padding: 30px 30px 30px 100px;
-  height: 500px;
+  min-height: 500px;
 }
 
 .home-gt-mockup,
@@ -53,23 +53,36 @@
   float: right;
 }
 
+.text-container{
+  height: fit-content;
+}
+
 .home-gt-heading,
 .home-fc-heading,
 .home-yu-heading {
+  font-size: 2rem;
   margin-top: 130px;
   margin-bottom: 30px;
   width: 30vw;
+  text-align: left;
   display: inline-block;
 }
 
 .home-gt-text,
 .home-fc-text,
 .home-yu-text {
-  width: 500px;
+  width: 350px;
   font-size: 1.2rem;
   line-height: 1.5rem;
   opacity: 0.5;
   display: inline-block;
+}
+
+.home-gt-mockup,
+.home-yu-mockup {
+  width: 500px;
+  height: auto;
+  float: right;
 }
 
 .home-fc-mockup {
@@ -82,4 +95,70 @@
 
 .home-yu-mockup {
   padding-top: 40px;
+}
+@media (max-width: 1200px) {
+
+  .home-container-grow-together,
+  .home-container-flowing-conversations,
+  .home-container-your-users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+.home-fc-mockup {
+  padding: 0;
+}
+
+.home-gt-heading,
+.home-fc-heading,
+.home-yu-heading {
+  display: block;
+  margin-top: 50px;
+}
+}
+
+@media (max-width: 786px) {
+  .home-container-mockup {
+    padding: 10px 20px;
+    text-align: center;
+  }
+  .home-mockup {
+    display: none;
+    float: none;
+  }
+  .home-container-mockup-text {
+    width: 100vw;
+  }
+  .home-mockup-heading {
+    font-size: 1.5rem;
+  }
+  .home-gt-heading,
+  .home-fc-heading,
+  .home-yu-heading {
+    font-size: 1.5rem;
+  }
+
+  .home-gt-text,
+  .home-fc-text,
+  .home-yu-text {
+    font-size: 1rem;
+  }
+
+  .home-container-grow-together,
+  .home-container-flowing-conversations,
+  .home-container-your-users {
+    margin: 50px 25px 10px 50px;
+    padding: 30px 30px 30px 100px;
+  }
+}
+
+@media (max-width: 490px) {
+
+  .home-container-grow-together,
+  .home-container-flowing-conversations,
+  .home-container-your-users {
+    padding: 15px 15px 15px 50px;
+  }
 }

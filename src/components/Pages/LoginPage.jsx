@@ -19,40 +19,35 @@ const LoginPage = ({ history }) => {
   const [loadingGoogle, setLoadingGoogle] = useState(false);
   const dispatch = useDispatch();
 
-  const {user} = useSelector((state)=> ({...state}))
+  const { user } = useSelector((state) => ({ ...state }));
 
-  useEffect(()=>{
-    if(user && user.token){
-        history.push('/')
+  useEffect(() => {
+    if (user && user.token) {
+      history.push("/");
     }
-  }, [user, history])
+  }, [user, history]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-
-    if(!email && !password){
-      toast.error(`please enter email and password`)
-        setLoading(false);
-        return;
+    if (!email && !password) {
+      toast.error(`please enter email and password`);
+      setLoading(false);
+      return;
     }
 
-
-    if(!email){
-      toast.error(`please enter email`)
-        setLoading(false);
-        return;
+    if (!email) {
+      toast.error(`please enter email`);
+      setLoading(false);
+      return;
     }
 
-    if(!password){
-      toast.error(`please enter password`)
-        setLoading(false);
-        return;
+    if (!password) {
+      toast.error(`please enter password`);
+      setLoading(false);
+      return;
     }
-
-
-
 
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
@@ -74,7 +69,7 @@ const LoginPage = ({ history }) => {
 
   const googleLogin = (e) => {
     e.preventDefault();
-    setLoadingGoogle(true)
+    setLoadingGoogle(true);
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
     signInWithPopup(auth, provider)
@@ -142,14 +137,15 @@ const LoginPage = ({ history }) => {
                 forgot password?
               </Link>{" "}
             </label>
-            <button
-              className="login-login"
-              onClick={handleSubmit}
-            >
-              {loading ? <i class='fa fa-spinner fa-spin '></i> : "Login" }
+            <button className="login-login" onClick={handleSubmit}>
+              {loading ? <i class="fa fa-spinner fa-spin "></i> : "Login"}
             </button>
             <button className="login-login-with-google" onClick={googleLogin}>
-            {loadingGoogle ? <i class='fa fa-spinner fa-spin '></i> : "Login with google" }
+              {loadingGoogle ? (
+                <i class="fa fa-spinner fa-spin "></i>
+              ) : (
+                "Login with google"
+              )}
             </button>
             <Link to="/register">
               <button className="login-sign-up">Sign-up</button>
